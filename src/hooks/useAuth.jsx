@@ -135,10 +135,10 @@ const useAuth = () => {
 
     const handleDisconnect = () => deactivateConnector(deactivate, networkId);
 
-    console.log("register", library);
+    // Registering events
     library.provider.on("disconnect", handleDisconnect);
     return () => {
-      console.log("unregister", library);
+      // Unegistering events
       library.provider.removeListener("disconnect", handleDisconnect);
     };
   }, [deactivate, library, networkId]);

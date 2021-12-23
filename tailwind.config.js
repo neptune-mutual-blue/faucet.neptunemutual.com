@@ -3,12 +3,10 @@ module.exports = {
   darkMode: "media",
   theme: {
     borderWidth: {
-      default: '1px'
+      default: "1px",
     },
     fontFamily: {
-      poppins: "Poppins, sans-serif",
-      sora: "Sora, sans-serif",
-      inter: "Inter, sans-serif"
+      inter: "Inter, sans-serif",
     },
     extend: {
       colors: {

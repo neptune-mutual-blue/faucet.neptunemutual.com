@@ -38,7 +38,7 @@ export const ConnectWallet = () => {
       <button
         type="button"
         onClick={logout}
-        className="mt-6 bg-white hover:bg-gray-100 text-gray-900 text-sm font-semibold py-2 px-6 focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 focus:outline-none transition-colors duration-200"
+        className="mt-6 bg-red-600 font-inter hover:bg-red-700 text-white text-sm font-semibold py-2 px-6 focus:ring-2 focus:ring-offset-2 focus:ring-red-800 focus:outline-none transition-colors duration-200"
       >
         Disconnect
       </button>
