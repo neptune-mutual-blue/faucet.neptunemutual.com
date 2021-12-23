@@ -27,7 +27,7 @@ export const ConnectWallet = () => {
     <button
       type="button"
       onClick={onOpen}
-      className="mt-6 bg-indigo-800 hover:bg-indigo-700 text-white text-sm font-semibold py-2 px-6 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-800 focus:outline-none transition-colors duration-200"
+      className="mt-6 bg-36309D font-inter hover:bg-indigo-700 text-white text-sm font-semibold py-2 px-6 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-800 focus:outline-none transition-colors duration-200"
     >
       Connect
     </button>

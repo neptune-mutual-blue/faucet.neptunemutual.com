@@ -8,23 +8,25 @@ export const LiquidityToken = () => {
   return (
     <>
       <tr>
-        <td>{balance} BUSD</td>
         <td>
-          <button className="text-indigo-800 hover:text-red-600">
-            Request
-          </button>
+          <td className="font-inter text-gray-800">{balance} BUSD</td>
         </td>
         <td>
-          <a>
-            <span className="sr-only">Open in Explorer</span>
-            <OpenInNewIcon fill="currentColor" />
-          </a>
-        </td>
-        <td>
-          <button>
-            <span className="sr-only">Add to Wallet</span>
-            <AddCircleIcon fill="currentColor" />
-          </button>
+          <td>
+            <button className="text-36309D hover:text-red-600">Request</button>
+          </td>
+          <td>
+            <a>
+              <span className="sr-only">Open in Explorer</span>
+              <OpenInNewIcon fill="currentColor" />
+            </a>
+          </td>
+          <td>
+            <button>
+              <span className="sr-only">Add to Wallet</span>
+              <AddCircleIcon fill="currentColor" />
+            </button>
+          </td>
         </td>
       </tr>
     </>

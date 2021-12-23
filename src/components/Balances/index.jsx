@@ -4,7 +4,7 @@ import { NPMToken } from "@/components/Balances/NPMToken";
 export const Balances = () => {
   return (
     <>
-      <h2>Your Balances</h2>
+      <p className="font-inter font-bold text-xs pt-8">Your Balances</p>
       <table>
         <thead></thead>
         <LiquidityToken />
