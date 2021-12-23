@@ -10,9 +10,9 @@ export const SelectNetwork = () => {
   return (
     <>
       <form onSubmit={(ev) => ev.preventDefault()}>
-        <p className="text-xs font-inter font-bold py-3.5 text-gray-800">
+        <h3 className="text-xs font-inter font-bold py-3.5 text-gray-800">
           Select a Network
-        </p>
+        </h3>
         <div className="sm:flex justify-left items-center sm:space-x-5">
           <div>
             <input
