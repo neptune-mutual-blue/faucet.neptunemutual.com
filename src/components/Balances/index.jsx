@@ -5,7 +5,7 @@ export const Balances = () => {
   return (
     <>
       <p className="font-inter font-bold text-xs pt-8">Your Balances</p>
-      <table>
+      <table className="table-auto w-full my-3">
         <thead></thead>
         <LiquidityToken />
         <NPMToken />

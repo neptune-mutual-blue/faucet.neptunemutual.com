@@ -11,7 +11,7 @@ export const LiquidityToken = () => {
         <td>
           <td className="font-inter text-gray-800">{balance} BUSD</td>
         </td>
-        <td>
+        <td className="text-right flex justify-end">
           <td>
             <button className="text-36309D hover:text-red-600">Request</button>
           </td>
