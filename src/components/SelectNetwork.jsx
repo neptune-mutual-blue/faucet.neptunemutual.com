@@ -13,7 +13,7 @@ export const SelectNetwork = () => {
         <p className="text-xs font-inter font-bold py-3.5 text-gray-800">
           Select a Network
         </p>
-        <div className="flex justify-left items-center space-x-5">
+        <div className="sm:flex justify-left items-center sm:space-x-5">
           <div>
             <input
               type="radio"
