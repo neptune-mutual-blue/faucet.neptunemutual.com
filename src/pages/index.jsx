@@ -15,18 +15,22 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1>Neptune Mutual Testnet Faucet</h1>
+      <main className="bg-36309D w-screen h-screen flex flex-col justify-center items-center">
+        <section className="bg-white h-auto w-auto p-12 rounded-3xl">
+          <p className="text-36309D font-bold text-2xl font-inter">
+            Neptune Mutual Testnet Faucet
+          </p>
 
-        <SelectNetwork />
+          <SelectNetwork />
 
-        <ConnectWallet />
+          <ConnectWallet />
 
-        <ConnectedAccount />
+          <ConnectedAccount />
 
-        <Balances />
+          <Balances />
 
-        <ProtocolContracts />
+          <ProtocolContracts />
+        </section>
       </main>
 
       <footer></footer>
