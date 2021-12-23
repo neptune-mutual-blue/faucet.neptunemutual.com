@@ -10,7 +10,7 @@ export const SelectNetwork = () => {
   return (
     <>
       <form onSubmit={(ev) => ev.preventDefault()}>
-        <p className="text-xs font-bold py-3.5 text-gray-800">
+        <p className="text-xs font-inter font-bold py-3.5 text-gray-800">
           Select a Network
         </p>
         <div className="flex justify-left items-center space-x-5">
@@ -25,7 +25,7 @@ export const SelectNetwork = () => {
             />
             <label
               htmlFor="networkChoice1"
-              className="font-inter text-gray-800 pl-1"
+              className="font-inter text-gray-800 pl-1 text-sm"
             >
               BSC Testnet
             </label>
@@ -42,7 +42,7 @@ export const SelectNetwork = () => {
             />
             <label
               htmlFor="networkChoice2"
-              className="font-inter text-gray-800 pl-1"
+              className="font-inter text-gray-800 pl-1 text-sm"
             >
               Mumbai
             </label>
@@ -59,7 +59,7 @@ export const SelectNetwork = () => {
             />
             <label
               htmlFor="networkChoice3"
-              className="font-inter text-gray-800 pl-1"
+              className="font-inter text-gray-800 pl-1 text-sm"
             >
               Ropsten
             </label>

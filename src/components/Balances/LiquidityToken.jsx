@@ -1,6 +1,5 @@
 import OpenInNewIcon from "@/components/icons/open-in-new";
 import AddCircleIcon from "@/components/icons/add-circle";
-import { useState, useEffect } from "react";
 
 export const LiquidityToken = () => {
   const balance = 1000.123;
@@ -9,25 +8,37 @@ export const LiquidityToken = () => {
     <>
       <tr>
         <td>
-          <td className="font-inter text-gray-800">{balance} BUSD</td>
+          <td className="font-inter text-gray-800 text-sm">{balance} BUSD</td>
         </td>
-        <td className="text-right flex justify-end">
+        <div className="text-right flex justify-end items-center">
           <td>
-            <button className="text-36309D hover:text-red-600">Request</button>
+            <button className="text-36309D hover:text-red-600 text-sm">
+              Request
+            </button>
           </td>
-          <td>
+          <td className="px-2 py-0">
             <a>
               <span className="sr-only">Open in Explorer</span>
-              <OpenInNewIcon fill="currentColor" />
+              <OpenInNewIcon
+                fill="#9B9B9B"
+                width={20}
+                height={18}
+                viewBox="0 0 24 24"
+              />
             </a>
           </td>
           <td>
-            <button>
+            <button className="flex">
               <span className="sr-only">Add to Wallet</span>
-              <AddCircleIcon fill="currentColor" />
+              <AddCircleIcon
+                fill="#9B9B9B"
+                width={20}
+                height={18}
+                viewBox="0 0 22 22"
+              />
             </button>
           </td>
-        </td>
+        </div>
       </tr>
     </>
   );
