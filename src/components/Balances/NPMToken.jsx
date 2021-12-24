@@ -11,7 +11,8 @@ const addresses = {
 };
 
 export const NPMToken = () => {
-  const { loading, balance, request, explorerUrl } = useFakeToken(addresses);
+  const { loading, balance, request, explorerUrl, register } =
+    useFakeToken(addresses);
 
   if (loading) {
     return <>Loading...</>;
@@ -45,7 +46,7 @@ export const NPMToken = () => {
           </a>
         </td>
         <td>
-          <button className="flex">
+          <button className="flex" onClick={() => register("NPM")}>
             <span className="sr-only">Add to Wallet</span>
             <AddCircleIcon
               fill="#9B9B9B"

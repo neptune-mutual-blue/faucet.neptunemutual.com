@@ -10,7 +10,8 @@ const addresses = {
 };
 
 export const LiquidityToken = () => {
-  const { loading, balance, request, explorerUrl } = useFakeToken(addresses);
+  const { loading, balance, request, explorerUrl, register } =
+    useFakeToken(addresses);
 
   if (loading) {
     return <>Loading...</>;
@@ -46,7 +47,7 @@ export const LiquidityToken = () => {
             </a>
           </td>
           <td>
-            <button className="flex">
+            <button className="flex" onClick={() => register("BUSD-lqt")}>
               <span className="sr-only">Add to Wallet</span>
               <AddCircleIcon
                 fill="#9B9B9B"
