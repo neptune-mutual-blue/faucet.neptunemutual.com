@@ -8,6 +8,7 @@ import { Disclaimer } from "@/components/ConnectWallet/Disclaimer";
 import { WalletList } from "@/components/ConnectWallet/WalletList";
 import { useEffect, useState } from "react";
 import { Loader } from "@/components/Loader/Loader";
+import CloseIcon from "@/components/icons/close";
 
 export const Popup = ({ isOpen, onClose }) => {
   const [isConnecting, setIsConnecting] = useState(false);
@@ -34,10 +35,11 @@ export const Popup = ({ isOpen, onClose }) => {
     <Modal isOpen={isOpen} onClose={onClose}>
       <div className="inline-block max-w-md p-12 my-8 overflow-hidden text-left align-middle transition-all transform shadow-xl rounded-2xl bg-f1f3f6">
         <button
-          className="absolute top-7 right-14 cursor-pointer"
           onClick={onClose}
+          className="absolute top-7 right-12 flex justify-center items-center text-gray-300 hover:text-black focus:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-364253 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
         >
-          <img src="/icons/close-icon.png" />
+          <span className="sr-only">Close</span>
+          <CloseIcon />
         </button>
         <Dialog.Title
           as="h3"

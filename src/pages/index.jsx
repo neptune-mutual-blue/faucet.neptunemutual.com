@@ -5,8 +5,15 @@ import { SelectNetwork } from "@/components/SelectNetwork";
 import { ConnectedAccount } from "@/components/ConnectedAccount";
 import { Balances } from "@/components/Balances";
 import { ProtocolContracts } from "@/components/ProtocolContracts";
+import { useProtocolContracts } from "@/src/hooks/useProtocolContracts";
+import { useNetwork } from "@/src/context/network";
 
 export default function Home() {
+  const { data } = useProtocolContracts();
+  const { network } = useNetwork();
+
+  const addresses = data[network] || {};
+
   return (
     <>
       <Head>
@@ -27,9 +34,9 @@ export default function Home() {
 
           <ConnectedAccount />
 
-          <Balances />
+          <Balances addresses={addresses} />
 
-          <ProtocolContracts />
+          <ProtocolContracts addresses={addresses} />
         </section>
       </main>
 

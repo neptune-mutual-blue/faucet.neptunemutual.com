@@ -1,12 +1,8 @@
 import { explorer } from "@/src/config/explorer";
 import { useNetwork } from "@/src/context/network";
-import { useProtocolContracts } from "@/src/hooks/useProtocolContracts";
 
-export const ProtocolContracts = () => {
-  const { data } = useProtocolContracts();
+export const ProtocolContracts = ({ addresses }) => {
   const { network } = useNetwork();
-
-  const addresses = data[network] || [];
 
   return (
     <>

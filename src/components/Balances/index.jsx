@@ -2,7 +2,7 @@ import { LiquidityToken } from "@/components/Balances/LiquidityToken";
 import { NPMToken } from "@/components/Balances/NPMToken";
 import { useWeb3React } from "@web3-react/core";
 
-export const Balances = () => {
+export const Balances = ({ addresses }) => {
   const { account } = useWeb3React();
 
   if (!account) {
@@ -16,8 +16,8 @@ export const Balances = () => {
       </h3>
       <table className="table-auto w-full mt-2">
         <thead></thead>
-        <LiquidityToken />
-        <NPMToken />
+        <LiquidityToken address={addresses.LiquidityToken} />
+        <NPMToken address={addresses.NPMToken} />
       </table>
     </div>
   );
