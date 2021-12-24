@@ -3,6 +3,7 @@ import { useWeb3React } from "@web3-react/core";
 import { fetchFakeTokenBalance } from "@/src/blockchain/fetchFakeTokenBalance";
 import { requestFakeToken } from "@/src/blockchain/requestFakeToken";
 import { explorer } from "@/src/config/explorer";
+import { registerToken } from "@/lib/connect-wallet/utils/wallet";
 
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -60,10 +61,19 @@ export const useFakeToken = (addresses) => {
       .catch(console.error);
   };
 
+  const register = (symbol) => {
+    if (!chainId || !account) return;
+
+    registerToken(addresses[chainId], symbol, 18)
+      .then(console.log)
+      .catch(console.error);
+  };
+
   return {
     loading,
     balance,
     request,
+    register,
     explorerUrl: explorer.address[chainId] + addresses[chainId],
   };
 };
