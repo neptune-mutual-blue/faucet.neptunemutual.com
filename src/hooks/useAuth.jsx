@@ -44,7 +44,7 @@ const activateConnector = async (connectorName, activate, networkId) => {
 
       console.log("error", {
         title: "Wrong network",
-        message: `Please switch to <strong>${NetworkNames[networkId]}</strong> in your <strong></strong> wallet`,
+        message: `Please switch to <strong>${NetworkNames[networkId]}</strong> in your <strong>${wallet}</strong> wallet`,
       });
     } else {
       window.localStorage.removeItem(ACTIVE_CONNECTOR_KEY);

@@ -13,7 +13,7 @@ export const NPMToken = ({ address }) => {
   }
 
   return (
-    <tr className="flex items-center border-t-default border-gray-300">
+    <tr className="flex items-center border-t border-gray-300">
       <td>
         <td className="font-inter text-gray-800 text-sm">
           {hasValue(balance) ? convertFromUnits(balance).toString() : "0"} NPM

@@ -33,7 +33,7 @@ export const Popup = ({ isOpen, onClose }) => {
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
-      <div className="inline-block max-w-md p-12 my-8 overflow-hidden text-left align-middle transition-all transform shadow-xl rounded-2xl bg-f1f3f6">
+      <div className="inline-block max-w-md p-12 my-8 overflow-hidden text-left align-middle transition-all rounded-3xl bg-f1f3f6">
         <button
           onClick={onClose}
           className="absolute top-7 right-12 flex justify-center items-center text-gray-300 hover:text-black focus:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-364253 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
@@ -43,7 +43,7 @@ export const Popup = ({ isOpen, onClose }) => {
         </button>
         <Dialog.Title
           as="h3"
-          className="font-sora text-3xl font-bold text-black-900 leading-9"
+          className="font-sora text-3xl font-bold text-black leading-9"
         >
           Connect Wallet
         </Dialog.Title>
