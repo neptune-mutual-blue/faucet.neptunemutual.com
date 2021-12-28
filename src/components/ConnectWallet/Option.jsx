@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const Option = (props) => {
-  const { id, name, iconSrc, onClick } = props;
+  const { id, name, Icon, onClick } = props;
 
   if (name.toLowerCase() == "metamask") {
     if (!(window.web3 || window.ethereum)) {
@@ -10,10 +10,10 @@ export const Option = (props) => {
           href="https://metamask.io/"
           target="_blank"
           rel="noreferrer noopener"
-          className="inline-flex w-full text-sm mb-5 font-normal text-black bg-white border border-d4dfee rounded-lg focus:border-4e7dd9 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-4e7dd9"
+          className="w-full flex items-center py-4 px-6 mb-4 bg-white border border-d4dfee rounded-lg focus:border-4e7dd9 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-4e7dd9"
         >
-          <img src={iconSrc} className="mx-6 my-4" />
-          <p className="py-4 text-base">Install Metamask</p>
+          <Icon className="mr-6" width={24} />
+          <p>Install Metamask</p>
         </a>
       );
     }
@@ -26,10 +26,10 @@ export const Option = (props) => {
           href="https://docs.binance.org/smart-chain/wallet/binance.html"
           target="_blank"
           rel="noreferrer noopener"
-          className="inline-flex w-full text-sm mb-5 font-normal text-black bg-white border border-d4dfee rounded-lg focus:border-4e7dd9 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-4e7dd9"
+          className="w-full flex items-center py-4 px-6 mb-4 bg-white border border-d4dfee rounded-lg focus:border-4e7dd9 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-4e7dd9"
         >
-          <img src={iconSrc} className="mx-6 my-4" />
-          <p className="py-4 text-base">Install Binance Wallet</p>
+          <Icon className="mr-6" width={24} />
+          <p>Install Binance Wallet</p>
         </a>
       );
     }
@@ -40,10 +40,10 @@ export const Option = (props) => {
       key={id}
       onClick={onClick}
       type="button"
-      className="inline-flex w-full text-sm mb-5 font-normal text-black bg-white border border-d4dfee rounded-lg focus:border-4e7dd9 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-4e7dd9"
+      className="w-full flex items-center py-4 px-6 mb-4 bg-white border border-d4dfee rounded-lg focus:border-4e7dd9 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-4e7dd9"
     >
-      <img src={iconSrc} className="mx-6 my-4" />
-      <p className="py-4 text-base">{name}</p>
+      <Icon className="mr-6" width={24} />
+      <p>{name}</p>
     </button>
   );
 };

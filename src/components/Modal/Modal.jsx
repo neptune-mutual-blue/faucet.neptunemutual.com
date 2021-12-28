@@ -5,10 +5,10 @@ export const Modal = ({ isOpen = false, children, onClose }) => (
   <Transition appear show={isOpen} as={Fragment}>
     <Dialog
       as="div"
-      className="fixed inset-0 z-10 overflow-y-auto bg-black bg-opacity-50 backdrop-blur-sm"
+      className="font-poppins fixed inset-0 z-10 overflow-y-auto bg-black bg-opacity-50 backdrop-blur-sm"
       onClose={onClose}
     >
-      <div className="min-h-screen max-w-full px-4 text-center">
+      <div className="min-h-screen px-4 text-center">
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"

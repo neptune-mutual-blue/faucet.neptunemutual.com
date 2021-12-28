@@ -33,20 +33,21 @@ export const Popup = ({ isOpen, onClose }) => {
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
-      <div className="inline-block max-w-md p-12 my-8 overflow-hidden text-left align-middle transition-all rounded-3xl bg-f1f3f6">
-        <button
-          onClick={onClose}
-          className="absolute top-7 right-12 flex justify-center items-center text-gray-300 hover:text-black focus:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-364253 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
-        >
-          <span className="sr-only">Close</span>
-          <CloseIcon />
-        </button>
+      <div className="relative inline-block max-w-md p-12 my-8 text-left align-middle transition-all rounded-3xl bg-f1f3f6">
         <Dialog.Title
           as="h3"
-          className="font-sora text-3xl font-bold text-black leading-9"
+          className="font-sora text-h2 font-bold text-black leading-9"
         >
           Connect Wallet
         </Dialog.Title>
+
+        <button
+          onClick={onClose}
+          className="absolute top-7 right-12 flex justify-center items-center text-black hover:text-4e7dd9 focus:text-4e7dd9 focus:outline-none focus-visible:ring-2 focus-visible:ring-black rounded-md focus-visible:ring-offset-transparent"
+        >
+          <CloseIcon fill="currentColor" />
+          <span className="sr-only">Close</span>
+        </button>
 
         {!isConnecting && (
           <>
@@ -59,7 +60,7 @@ export const Popup = ({ isOpen, onClose }) => {
           <>
             <div className="mt-8 flex justify-left items-center">
               <Loader />
-              <p className="text-base">Connecting</p>
+              <p className="">Connecting</p>
             </div>
           </>
         )}
