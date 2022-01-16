@@ -17,7 +17,7 @@ export const LiquidityToken = ({ address }) => {
         <td>
           <td className="font-inter text-gray-800 text-sm">
             {hasValue(balance) ? convertFromUnits(balance).toString() : "0"}{" "}
-            BUSD
+            DAI
           </td>
         </td>
         <td className="p-1 ml-auto">
@@ -35,7 +35,7 @@ export const LiquidityToken = ({ address }) => {
           </a>
         </td>
         <td className="p-1 ml-1">
-          <button className="flex" onClick={() => register("BUSD")}>
+          <button className="flex" onClick={() => register("DAI")}>
             <span className="sr-only">Add to Wallet</span>
             <AddCircleIcon fill="#9B9B9B" width={20} height={20} />
           </button>
