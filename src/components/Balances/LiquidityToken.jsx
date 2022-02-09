@@ -2,10 +2,11 @@ import OpenInNewIcon from "@/components/icons/open-in-new";
 import AddCircleIcon from "@/components/icons/add-circle";
 import { useFakeToken } from "@/src/hooks/useFakeToken";
 import { convertFromUnits, hasValue } from "@/src/utils/bn";
+import { useMockDAI } from "@/src/hooks/useMockDAI";
 
 export const LiquidityToken = ({ address }) => {
   const { loading, balance, request, explorerUrl, register } =
-    useFakeToken(address);
+    useMockDAI(address);
 
   if (loading) {
     return <>Loading...</>;
@@ -16,8 +17,7 @@ export const LiquidityToken = ({ address }) => {
       <tr className="flex items-center">
         <td>
           <td className="font-inter text-gray-800 text-sm">
-            {hasValue(balance) ? convertFromUnits(balance).toString() : "0"}{" "}
-            DAI
+            {hasValue(balance) ? convertFromUnits(balance).toString() : "0"} DAI
           </td>
         </td>
         <td className="p-1 ml-auto">
