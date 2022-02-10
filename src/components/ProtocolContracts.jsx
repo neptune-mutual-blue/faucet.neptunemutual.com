@@ -1,5 +1,6 @@
 import { explorer } from "@/src/config/explorer";
 import { useNetwork } from "@/src/context/network";
+import { Fragment } from "react";
 
 export const ProtocolContracts = ({ addresses }) => {
   const { network } = useNetwork();
@@ -12,9 +13,8 @@ export const ProtocolContracts = ({ addresses }) => {
       <p className="font-inter max-w-fit">
         {Object.keys(addresses).map((k, idx) => {
           return (
-            <>
+            <Fragment key={k}>
               <a
-                key={k}
                 href={explorer.address[network] + addresses[k]}
                 rel="noreferrer"
                 target="_blank"
@@ -25,7 +25,7 @@ export const ProtocolContracts = ({ addresses }) => {
               {idx !== Object.keys(addresses).length - 1 && (
                 <span className="text-36309D">, </span>
               )}
-            </>
+            </Fragment>
           );
         })}
       </p>
