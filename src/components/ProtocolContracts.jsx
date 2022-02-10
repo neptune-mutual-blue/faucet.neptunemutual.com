@@ -1,4 +1,3 @@
-import { explorer } from "@/lib/connect-wallet/config/chains";
 import { getAddressLink } from "@/lib/connect-wallet/utils/explorer";
 import { useNetwork } from "@/src/context/network";
 import { Fragment } from "react";
