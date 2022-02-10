@@ -16,8 +16,10 @@ export const Balances = ({ addresses }) => {
       </h3>
       <table className="table-auto w-full mt-2">
         <thead></thead>
-        <LiquidityToken address={addresses.LiquidityToken} />
-        <NPMToken address={addresses.NPMToken} />
+        <tbody>
+          <LiquidityToken address={addresses.LiquidityToken} />
+          <NPMToken address={addresses.NPMToken} />
+        </tbody>
       </table>
     </div>
   );
