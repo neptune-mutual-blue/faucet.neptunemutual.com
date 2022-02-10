@@ -9,15 +9,19 @@ export const NPMToken = ({ address }) => {
     useFakeToken(address);
 
   if (loading) {
-    return <>Loading...</>;
+    return (
+      <tr>
+        <td>Loading...</td>
+      </tr>
+    );
   }
 
   return (
     <tr className="flex items-center border-t border-gray-300">
       <td>
-        <td className="font-inter text-gray-800 text-sm">
+        <div className="font-inter text-gray-800 text-sm">
           {hasValue(balance) ? convertFromUnits(balance).toString() : "0"} NPM
-        </td>
+        </div>
       </td>
       <td className="p-1 ml-auto">
         <button
