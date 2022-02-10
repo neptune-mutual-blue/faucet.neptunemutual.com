@@ -1,4 +1,4 @@
-import { explorer } from "@/src/config/explorer";
+import { explorer } from "@/lib/connect-wallet/config/chains";
 import { useNetwork } from "@/src/context/network";
 import { Fragment } from "react";
 
