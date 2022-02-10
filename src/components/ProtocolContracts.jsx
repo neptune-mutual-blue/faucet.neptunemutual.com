@@ -1,10 +1,10 @@
 import { explorer } from "@/lib/connect-wallet/config/chains";
+import { getAddressLink } from "@/lib/connect-wallet/utils/explorer";
 import { useNetwork } from "@/src/context/network";
 import { Fragment } from "react";
 
 export const ProtocolContracts = ({ addresses }) => {
   const { network } = useNetwork();
-
   return (
     <>
       <h3 className="text-xs font-inter font-bold pt-4 pb-2 text-gray-800">
@@ -15,7 +15,7 @@ export const ProtocolContracts = ({ addresses }) => {
           return (
             <Fragment key={k}>
               <a
-                href={explorer.address[network] + addresses[k]}
+                href={getAddressLink(network, addresses[k])}
                 rel="noreferrer"
                 target="_blank"
                 className="text-36309D hover:text-red-600 underline underline-offset-1 text-sm"
