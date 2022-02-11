@@ -59,7 +59,11 @@ export const useFakeToken = (address) => {
     if (!chainId || !account) return;
 
     requestToken(address, library, account, chainId)
-      .then(console.log)
+      .then(() => {
+        fetchBalance(address, library, account, chainId)
+          .then((bal) => setBalance(bal))
+          .catch(console.error);
+      })
       .catch(console.error);
   };
 
