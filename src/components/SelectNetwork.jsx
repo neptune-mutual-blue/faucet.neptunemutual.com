@@ -1,11 +1,20 @@
+import { useEffect } from "react";
 import { useNetwork } from "../context/network";
 
+const Network_IDs = ["3", "97", "80001", "42"];
 export const SelectNetwork = () => {
   const { network, setNetwork } = useNetwork();
 
   const handleChange = (ev) => {
     setNetwork(ev.target.value);
   };
+
+  useEffect(() => {
+    if (window?.ethereum) {
+      const selectedNetwork = window.ethereum.networkVersion;
+      if (Network_IDs.includes(selectedNetwork)) setNetwork(selectedNetwork);
+    }
+  }, []);
 
   return (
     <>
