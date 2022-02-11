@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useWeb3React } from "@web3-react/core";
 import { fetchFakeTokenBalance } from "@/src/blockchain/fetchFakeTokenBalance";
-import { explorer } from "@/src/config/explorer";
+import { getAddressLink } from "@/lib/connect-wallet/utils/explorer";
 import { registerToken } from "@/lib/connect-wallet/utils/wallet";
 import { requestMockDAI } from "@/src/blockchain/mintDAI";
 
@@ -66,6 +66,6 @@ export const useMockDAI = (address) => {
     balance,
     request,
     register,
-    explorerUrl: explorer.address[chainId] + address,
+    explorerUrl: getAddressLink(chainId, address),
   };
 };

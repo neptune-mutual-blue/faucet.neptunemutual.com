@@ -1,11 +1,22 @@
 import ConnectWallet from "@/lib/connect-wallet/components/ConnectWallet/ConnectWallet";
+import { useNetwork } from "@/src/context/network";
 import { useWeb3React } from "@web3-react/core";
+import { useEffect } from "react";
+import useAuth from "@/lib/connect-wallet/hooks/useAuth";
 
 export const ConnectToWallet = () => {
-  const { chainId, active } = useWeb3React();
+  const { active } = useWeb3React();
+  const { network } = useNetwork();
+  const networkId = parseInt(network, 10);
+
+  const { logout } = useAuth(networkId);
+
+  useEffect(() => {
+    logout();
+  }, [networkId]);
 
   return (
-    <ConnectWallet networkId={chainId} notifier={console.log}>
+    <ConnectWallet networkId={networkId} notifier={console.log}>
       {({ onOpen, logout }) => (
         <button
           type="button"
