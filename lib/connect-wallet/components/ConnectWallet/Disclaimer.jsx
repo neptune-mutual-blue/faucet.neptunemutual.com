@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export const Disclaimer = () => {
   return (
     <p className="text-sm text-black leading-5 mt-6">

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useWeb3React } from "@web3-react/core";
 import { fetchFakeTokenBalance } from "@/src/blockchain/fetchFakeTokenBalance";
 import { requestFakeToken } from "@/src/blockchain/requestFakeToken";
-import { explorer } from "@/src/config/explorer";
+import { getAddressLink } from "@/lib/connect-wallet/utils/explorer";
 import { registerToken } from "@/lib/connect-wallet/utils/wallet";
 
 function delay(ms) {
@@ -50,7 +50,9 @@ export const useFakeToken = (address) => {
         setLoading(false);
       });
 
-    return () => (ignore = true);
+    return () => {
+      ignore = true;
+    };
   }, [account, library, chainId, address]);
 
   const request = () => {
@@ -72,6 +74,6 @@ export const useFakeToken = (address) => {
     balance,
     request,
     register,
-    explorerUrl: explorer.address[chainId] + address,
+    explorerUrl: getAddressLink(chainId, address),
   };
 };

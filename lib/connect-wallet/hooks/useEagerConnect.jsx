@@ -1,10 +1,6 @@
 import { useEffect } from "react";
-import { ConnectorNames } from "../../lib/connect-wallet/config/connectors";
-import {
-  ACTIVE_CHAIN_KEY,
-  ACTIVE_CONNECTOR_KEY,
-} from "../../lib/connect-wallet/config/localstorage";
-
+import { ConnectorNames } from "../config/connectors";
+import { ACTIVE_CONNECTOR_KEY } from "../config/localstorage";
 import useAuth from "./useAuth";
 
 const _binanceChainListener = async () =>
@@ -21,13 +17,19 @@ const _binanceChainListener = async () =>
     })
   );
 
-export const useEagerConnect = () => {
-  const { login } = useAuth();
+export const useEagerConnect = (networkId, notifier) => {
+  const { login } = useAuth(networkId, notifier);
 
   useEffect(() => {
     const connectorName = window.localStorage.getItem(ACTIVE_CONNECTOR_KEY);
 
+    if (!connectorName) {
+      console.info("Unable to find connector from local storage");
+      return;
+    }
+
     if (connectorName === ConnectorNames.BSC) {
+      // window.BinanceChain might not be imediately available on page load
       const isConnectorBinanceChain = connectorName === ConnectorNames.BSC;
       const isBinanceChainDefined = Reflect.has(window, "BinanceChain");
 
