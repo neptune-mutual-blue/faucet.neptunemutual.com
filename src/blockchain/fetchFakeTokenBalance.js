@@ -21,7 +21,5 @@ export const fetchFakeTokenBalance = async (
   }
 
   const result = await instance.balanceOf(account);
-  console.log(result.toString());
-
   return result.toString();
 };
