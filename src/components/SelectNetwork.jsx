@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNetwork } from "../context/network";
 
-const Network_IDs = ["3", "97", "80001", "42"];
+const Network_IDs = ["3", "42"];
 export const SelectNetwork = () => {
   const { network, setNetwork } = useNetwork();
 
@@ -27,6 +27,24 @@ export const SelectNetwork = () => {
             <input
               type="radio"
               className="w-4 h-4 accent-36309D"
+              id="networkChoice4"
+              name="network"
+              value="42"
+              onChange={handleChange}
+              checked={"42" === network}
+            />
+            <label
+              htmlFor="networkChoice4"
+              className="font-inter text-gray-800 ml-1 text-sm"
+            >
+              Kovan
+            </label>
+          </div>
+
+          <div className="flex justify-center items-center">
+            <input
+              type="radio"
+              className="w-4 h-4 accent-36309D"
               id="networkChoice3"
               name="network"
               value="3"
@@ -41,7 +59,7 @@ export const SelectNetwork = () => {
             </label>
           </div>
 
-          <div className="flex justify-center items-center">
+          {/* <div className="flex justify-center items-center">
             <input
               type="radio"
               className="w-4 h-4 accent-36309D"
@@ -57,9 +75,9 @@ export const SelectNetwork = () => {
             >
               BSC Testnet
             </label>
-          </div>
+          </div> */}
 
-          <div className="flex justify-center items-center">
+          {/* <div className="flex justify-center items-center">
             <input
               type="radio"
               className="w-4 h-4 accent-36309D"
@@ -75,25 +93,7 @@ export const SelectNetwork = () => {
             >
               Mumbai
             </label>
-          </div>
-
-          <div className="flex justify-center items-center">
-            <input
-              type="radio"
-              className="w-4 h-4 accent-36309D"
-              id="networkChoice4"
-              name="network"
-              value="42"
-              onChange={handleChange}
-              checked={"42" === network}
-            />
-            <label
-              htmlFor="networkChoice4"
-              className="font-inter text-gray-800 ml-1 text-sm"
-            >
-              Kovan
-            </label>
-          </div>
+          </div> */}
         </div>
       </form>
     </>
