@@ -1,7 +1,6 @@
 import "tailwindcss/tailwind.css";
 import Head from "next/head";
-// import { ConnectWallet } from "@/components/ConnectWallet/ConnectWallet";
-import { WalletConnect } from "@/components/WalletConnect";
+import { ConnectToWallet } from "@/components/ConnectToWallet";
 import { SelectNetwork } from "@/components/SelectNetwork";
 import { ConnectedAccount } from "@/components/ConnectedAccount";
 import { Balances } from "@/components/Balances";
@@ -31,8 +30,7 @@ export default function Home() {
 
           <SelectNetwork />
 
-          {/* <ConnectWallet /> */}
-          <WalletConnect />
+          <ConnectToWallet />
 
           <ConnectedAccount />
 

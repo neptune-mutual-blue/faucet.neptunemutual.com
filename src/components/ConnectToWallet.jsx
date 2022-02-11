@@ -1,11 +1,11 @@
 import ConnectWallet from "@/lib/connect-wallet/components/ConnectWallet/ConnectWallet";
 import { useWeb3React } from "@web3-react/core";
 
-export const WalletConnect = () => {
+export const ConnectToWallet = () => {
   const { chainId, active } = useWeb3React();
 
   return (
-    <ConnectWallet networkId={chainId} notifier={undefined}>
+    <ConnectWallet networkId={chainId} notifier={console.log}>
       {({ onOpen, logout }) => (
         <button
           type="button"
