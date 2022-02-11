@@ -100,6 +100,36 @@ export const useProtocolContracts = () => {
           },
         }));
       });
+
+      registry.Protocol.getAddress(chain).then((addr) => {
+        setData((prev) => ({
+          ...prev,
+          [chain]: {
+            ...prev[chain],
+            Protocol: addr,
+          },
+        }));
+      });
+
+      registry.BondPool.getAddress(chain).then((addr) => {
+        setData((prev) => ({
+          ...prev,
+          [chain]: {
+            ...prev[chain],
+            BondPool: addr,
+          },
+        }));
+      });
+
+      registry.StakingPools.getAddress(chain).then((addr) => {
+        setData((prev) => ({
+          ...prev,
+          [chain]: {
+            ...prev[chain],
+            StakingPools: addr,
+          },
+        }));
+      });
     });
   }, []);
 

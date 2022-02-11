@@ -21,5 +21,6 @@ export const requestFakeToken = async (
   }
 
   const tx = await instance.request();
+  await tx.wait();
   return tx;
 };

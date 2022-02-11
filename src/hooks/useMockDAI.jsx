@@ -51,7 +51,14 @@ export const useMockDAI = (address) => {
     if (!chainId || !account) return;
 
     requestMockDAI(address, library, account, chainId)
-      .then(console.log)
+      .then(async () => {
+        try {
+          const bal = await fetchBalance(address, library, account, chainId);
+          setBalance(bal);
+        } catch (e) {
+          console.error(e);
+        }
+      })
       .catch(console.error);
   };
 
