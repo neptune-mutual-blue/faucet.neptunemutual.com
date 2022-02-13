@@ -758,10 +758,10 @@
     "@json-rpc-tools/types" "^1.7.6"
     "@pedrouid/environment" "^1.0.1"
 
-"@neptunemutual/sdk@^0.2.7-beta":
-  version "0.2.7-beta"
-  resolved "https://registry.yarnpkg.com/@neptunemutual/sdk/-/sdk-0.2.7-beta.tgz#9aae22c1ea30a12e3946536e2cca2915621c2a33"
-  integrity sha512-PHVC+rotvTsaCFVBdT78X4w30cc3tqjvJMegcTUcgDhbG7kEx716ow3cekPbDSJWW/a9vhdC0pCNl8tB/7YE9g==
+"@neptunemutual/sdk@^0.2.8-beta":
+  version "0.2.8-beta"
+  resolved "https://registry.yarnpkg.com/@neptunemutual/sdk/-/sdk-0.2.8-beta.tgz#5e2f3ec0b1de78c09651f9ca67cde730a91e7174"
+  integrity sha512-GF3eB/D1J9/K/BipeRVvezYadLH1L3R4bLSO2gN+0ej2jGBb3hggxRqqZEh6f6g6h6EZYH0canzXg0FKxebUjQ==
   dependencies:
     bs58 "4.0.1"
     ethers "5.4.1"

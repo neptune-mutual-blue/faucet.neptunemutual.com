@@ -1,5 +1,4 @@
 import { ethers } from "ethers";
-import { Contract } from "@ethersproject/contracts";
 import { getProviderOrSigner } from "@/lib/connect-wallet/utils/web3";
 
 const getContract = async (tokenAddress, provider) => {
@@ -12,11 +11,8 @@ export const mintDAI = async (tokenAddress, provider) => {
   try {
     const contract = await getContract(tokenAddress, provider);
     const tx = await contract.mint("100000000000000000000000");
-
+    await tx.wait();
     return tx;
-
-    // const result = await tx.wait()
-    // console.info('Tx', result)
   } catch (error) {
     console.error(error.message);
   }
