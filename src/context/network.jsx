@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 
-const initialValue = "3";
+const initialValue = "42";
 
 const NetworkContext = createContext({
   network: initialValue,
