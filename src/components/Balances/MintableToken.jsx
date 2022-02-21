@@ -24,7 +24,9 @@ export const MintableToken = ({ address, symbol }) => {
       <tr className="flex items-center">
         <td>
           <div className="font-inter text-gray-800 text-sm">
-            {hasValue(balance) ? convertFromUnits(balance).toString() : "0"}{" "}
+            {hasValue(balance)
+              ? convertFromUnits(balance).decimalPlaces(2).toString()
+              : "0"}{" "}
             {symbol}
           </div>
         </td>
