@@ -1,12 +1,15 @@
 import OpenInNewIcon from "@/components/icons/open-in-new";
 import AddCircleIcon from "@/components/icons/add-circle";
-import { useFakeToken } from "@/src/hooks/useFakeToken";
 import { convertFromUnits, hasValue } from "@/src/utils/bn";
-import { useMockDAI } from "@/src/hooks/useMockDAI";
+import { useMintableToken } from "@/src/hooks/useMintableToken";
 
-export const LiquidityToken = ({ address }) => {
+export const MintableToken = ({ address, symbol }) => {
   const { loading, balance, request, explorerUrl, register } =
-    useMockDAI(address);
+    useMintableToken(address);
+
+  if (!symbol) {
+    return null;
+  }
 
   if (loading) {
     return (
@@ -21,7 +24,8 @@ export const LiquidityToken = ({ address }) => {
       <tr className="flex items-center">
         <td>
           <div className="font-inter text-gray-800 text-sm">
-            {hasValue(balance) ? convertFromUnits(balance).toString() : "0"} DAI
+            {hasValue(balance) ? convertFromUnits(balance).toString() : "0"}{" "}
+            {symbol}
           </div>
         </td>
         <td className="p-1 ml-auto">
@@ -39,7 +43,7 @@ export const LiquidityToken = ({ address }) => {
           </a>
         </td>
         <td className="p-1 ml-1">
-          <button className="flex" onClick={() => register("DAI")}>
+          <button className="flex" onClick={() => register(symbol)}>
             <span className="sr-only">Add to Wallet</span>
             <AddCircleIcon fill="#9B9B9B" width={20} height={20} />
           </button>

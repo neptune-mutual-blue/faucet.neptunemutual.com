@@ -5,10 +5,6 @@ import { requestFakeToken } from "@/src/blockchain/requestFakeToken";
 import { getAddressLink } from "@/lib/connect-wallet/utils/explorer";
 import { registerToken } from "@/lib/connect-wallet/utils/wallet";
 
-function delay(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
 const fetchBalance = async (tokenAddress, library, account, networkId) => {
   const res = await fetchFakeTokenBalance(
     tokenAddress,
@@ -24,7 +20,7 @@ const requestToken = async (tokenAddress, library, account, networkId) => {
   return res;
 };
 
-export const useFakeToken = (address) => {
+export const useMintableToken = (address) => {
   const { chainId, account, library } = useWeb3React();
 
   const [balance, setBalance] = useState();
