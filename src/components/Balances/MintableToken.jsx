@@ -43,7 +43,7 @@ export const MintableToken = ({ address, symbol }) => {
           </a>
         </td>
         <td className="p-1 ml-1">
-          <button className="flex" onClick={() => register("DAI")}>
+          <button className="flex" onClick={() => register(symbol)}>
             <span className="sr-only">Add to Wallet</span>
             <AddCircleIcon fill="#9B9B9B" width={20} height={20} />
           </button>

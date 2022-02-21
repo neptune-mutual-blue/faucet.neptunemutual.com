@@ -1,6 +1,4 @@
-import { LiquidityToken } from "@/components/Balances/LiquidityToken";
 import { MintableToken } from "@/components/Balances/MintableToken";
-import { NPMToken } from "@/components/Balances/NPMToken";
 import { useNetwork } from "@/src/context/network";
 import { useWeb3React } from "@web3-react/core";
 import { addresses as configured } from "@/src/config";
@@ -20,9 +18,8 @@ export const Balances = ({ addresses }) => {
       </h3>
       <table className="table-auto w-full mt-2">
         <thead></thead>
-        <tbody>
-          <LiquidityToken address={addresses.LiquidityToken} />
-          {/* <NPMToken address={addresses.NPMToken} /> */}
+        <tbody className="divide-y divide-gray-200">
+          <MintableToken address={addresses.LiquidityToken} symbol="DAI" />
           <MintableToken address={addresses.NPMToken} symbol="NPM" />
           <MintableToken address={configured[network].CPOOL} symbol="CPOOL" />
           <MintableToken address={configured[network].HT} symbol="HT" />
