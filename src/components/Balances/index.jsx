@@ -1,11 +1,15 @@
 import { LiquidityToken } from "@/components/Balances/LiquidityToken";
+import { MintableToken } from "@/components/Balances/MintableToken";
 import { NPMToken } from "@/components/Balances/NPMToken";
+import { useNetwork } from "@/src/context/network";
 import { useWeb3React } from "@web3-react/core";
+import { addresses as configured } from "@/src/config";
 
 export const Balances = ({ addresses }) => {
   const { account } = useWeb3React();
+  const { network } = useNetwork();
 
-  if (!account) {
+  if (!account || !network) {
     return null;
   }
 
@@ -18,7 +22,12 @@ export const Balances = ({ addresses }) => {
         <thead></thead>
         <tbody>
           <LiquidityToken address={addresses.LiquidityToken} />
-          <NPMToken address={addresses.NPMToken} />
+          {/* <NPMToken address={addresses.NPMToken} /> */}
+          <MintableToken address={addresses.NPMToken} symbol="NPM" />
+          <MintableToken address={configured[network].CPOOL} symbol="CPOOL" />
+          <MintableToken address={configured[network].HT} symbol="HT" />
+          <MintableToken address={configured[network].OKB} symbol="OKB" />
+          <MintableToken address={configured[network].AXS} symbol="AXS" />
         </tbody>
       </table>
     </div>

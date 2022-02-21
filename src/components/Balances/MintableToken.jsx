@@ -1,11 +1,15 @@
 import OpenInNewIcon from "@/components/icons/open-in-new";
 import AddCircleIcon from "@/components/icons/add-circle";
 import { convertFromUnits, hasValue } from "@/src/utils/bn";
-import { useMockDAI } from "@/src/hooks/useMockDAI";
+import { useMintableToken } from "@/src/hooks/useMintableToken";
 
-export const LiquidityToken = ({ address }) => {
+export const MintableToken = ({ address, symbol }) => {
   const { loading, balance, request, explorerUrl, register } =
-    useMockDAI(address);
+    useMintableToken(address);
+
+  if (!symbol) {
+    return null;
+  }
 
   if (loading) {
     return (
@@ -20,7 +24,8 @@ export const LiquidityToken = ({ address }) => {
       <tr className="flex items-center">
         <td>
           <div className="font-inter text-gray-800 text-sm">
-            {hasValue(balance) ? convertFromUnits(balance).toString() : "0"} DAI
+            {hasValue(balance) ? convertFromUnits(balance).toString() : "0"}{" "}
+            {symbol}
           </div>
         </td>
         <td className="p-1 ml-auto">
