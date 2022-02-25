@@ -10,10 +10,18 @@ export const SelectNetwork = () => {
   };
 
   useEffect(() => {
-    if (window?.ethereum) {
-      const selectedNetwork = window.ethereum.networkVersion;
-      if (Network_IDs.includes(selectedNetwork)) setNetwork(selectedNetwork);
+    async function getSelectedNetwork() {
+      try {
+        const selectedNetwork = await window.ethereum.request({
+          method: "net_version",
+        });
+        if (Network_IDs.includes(selectedNetwork)) setNetwork(selectedNetwork);
+      } catch (e) {
+        console.error({ e });
+      }
     }
+
+    getSelectedNetwork();
   }, []);
 
   return (
