@@ -51,12 +51,12 @@ export const useProtocolContracts = () => {
         }));
       });
 
-      registry.LiquidityToken.getAddress(chain).then((addr) => {
+      registry.Stablecoin.getAddress(chain).then((addr) => {
         setData((prev) => ({
           ...prev,
           [chain]: {
             ...prev[chain],
-            LiquidityToken: addr,
+            Stablecoin: addr,
           },
         }));
       });
