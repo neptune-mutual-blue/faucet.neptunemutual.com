@@ -19,12 +19,8 @@ export const Balances = ({ addresses }) => {
       <table className="table-auto w-full mt-2">
         <thead></thead>
         <tbody className="divide-y divide-gray-200">
-          <MintableToken address={addresses.LiquidityToken} symbol="DAI" />
+          <MintableToken address={addresses.Stablecoin} symbol="DAI" />
           <MintableToken address={addresses.NPMToken} symbol="NPM" />
-          <MintableToken address={configured[network].CPOOL} symbol="CPOOL" />
-          <MintableToken address={configured[network].HT} symbol="HT" />
-          <MintableToken address={configured[network].OKB} symbol="OKB" />
-          <MintableToken address={configured[network].AXS} symbol="AXS" />
         </tbody>
       </table>
     </div>
