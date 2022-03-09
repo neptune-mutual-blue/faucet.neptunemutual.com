@@ -31,23 +31,6 @@ export const SelectNetwork = () => {
           Select a Network
         </h3>
         <div className="sm:flex justify-left items-center sm:space-x-5">
-          <div className="flex justify-center items-center">
-            <input
-              type="radio"
-              className="w-4 h-4 accent-36309D"
-              id="networkChoice4"
-              name="network"
-              value="42"
-              onChange={handleChange}
-              checked={"42" === network}
-            />
-            <label
-              htmlFor="networkChoice4"
-              className="font-inter text-gray-800 ml-1 text-sm"
-            >
-              Kovan
-            </label>
-          </div>
 
           <div className="flex justify-center items-center">
             <input
@@ -64,6 +47,24 @@ export const SelectNetwork = () => {
               className="font-inter text-gray-800 ml-1 text-sm"
             >
               Ropsten
+            </label>
+          </div>
+          <div className="flex justify-center items-center">
+            <input
+              type="radio"
+              className="w-4 h-4 accent-36309D"
+              id="networkChoice4"
+              name="network"
+              disabled={true}
+              value="42"
+              onChange={handleChange}
+              checked={"42" === network}
+            />
+            <label
+              htmlFor="networkChoice4"
+              className="font-inter text-gray-800 ml-1 text-sm"
+            >
+              Kovan
             </label>
           </div>
 
