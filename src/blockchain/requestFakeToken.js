@@ -20,7 +20,7 @@ export const requestFakeToken = async (
     console.log("No instance found");
   }
 
-  const tx = await instance.mint("100000000000000000000000");
+  const tx = await instance.mint("2000000000000000000000");
   await tx.wait();
   return tx;
 };
