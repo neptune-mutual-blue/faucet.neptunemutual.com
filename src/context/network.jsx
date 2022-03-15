@@ -1,10 +1,10 @@
 import { createContext, useContext, useState } from "react";
 
-const initialValue = "42";
+const initialValue = "80001";
 
 const NetworkContext = createContext({
   network: initialValue,
-  setNetwork: () => null,
+  setNetwork: (_value) => {},
 });
 
 export const useNetwork = () => {
