@@ -9,12 +9,14 @@ export const ProtocolContracts = ({ addresses }) => {
 
   return (
     <>
-      <h3 className="text-xs font-inter font-bold pt-4 pb-2 text-gray-800">
+      <h3 className="pt-4 pb-2 text-xs font-bold text-gray-800 font-inter">
         Protocol Contracts
       </h3>
       <p className="font-inter max-w-fit">
         {!account && (
-          <span className="text-red-600">Please connect your wallet</span>
+          <span className="text-sm text-red-600">
+            Please connect your wallet...
+          </span>
         )}
         {account &&
           Object.keys(addresses)
@@ -26,7 +28,7 @@ export const ProtocolContracts = ({ addresses }) => {
                     href={getAddressLink(network, addresses[k])}
                     rel="noreferrer"
                     target="_blank"
-                    className="text-36309D hover:text-red-600 underline underline-offset-1 text-sm"
+                    className="text-sm underline text-36309D hover:text-red-600 underline-offset-1"
                   >
                     {k}
                   </a>
