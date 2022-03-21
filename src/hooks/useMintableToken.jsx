@@ -66,7 +66,13 @@ export const useMintableToken = (address) => {
   const register = (symbol) => {
     if (!chainId || !account) return;
 
-    registerToken(address, symbol, 18).then(console.log).catch(console.error);
+    const image = symbol
+      ? `https://api.neptunemutual.com/images/tokens/${symbol.toLowerCase()}.svg`
+      : undefined;
+
+    registerToken(address, symbol, 18, image)
+      .then(console.log)
+      .catch(console.error);
   };
 
   return {
