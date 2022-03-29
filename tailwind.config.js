@@ -2,6 +2,12 @@ module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}", "./lib/**/*.{js,ts,jsx,tsx}"],
   darkMode: "media",
   theme: {
+    screens: {
+      sm: "600px",
+      md: "768px",
+      lg: "992px",
+      xl: "1200px",
+    },
     fontFamily: {
       inter: "Inter, sans-serif",
       poppins: "Poppins, sans-serif",

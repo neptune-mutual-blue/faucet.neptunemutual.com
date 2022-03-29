@@ -22,9 +22,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="bg-36309D w-screen h-screen flex flex-col justify-center items-center">
-        <section className="bg-white h-auto w-auto p-12 rounded-3xl">
-          <p className="text-36309D font-bold text-2xl font-inter">
+      <main className="flex flex-col items-center justify-center w-screen h-screen bg-36309D">
+        <section className="w-auto h-auto p-8 mx-4 bg-white sm:p-12 sm:mx-0 rounded-3xl">
+          <p className="text-2xl font-bold text-36309D font-inter">
             Neptune Mutual Testnet Faucet
           </p>
 

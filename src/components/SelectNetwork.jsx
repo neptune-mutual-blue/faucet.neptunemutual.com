@@ -30,7 +30,7 @@ export const SelectNetwork = () => {
         <h3 className="text-xs font-inter font-bold py-3.5 text-gray-800">
           Select a Network
         </h3>
-        <div className="items-center sm:flex justify-left sm:space-x-5">
+        <div className="flex items-center justify-between sm:justify-start sm:space-x-5">
           <div className="flex items-center justify-center">
             <input
               type="radio"

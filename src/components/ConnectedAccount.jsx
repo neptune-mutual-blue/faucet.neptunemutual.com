@@ -9,10 +9,10 @@ export const ConnectedAccount = () => {
 
   return (
     <div className="pt-8 pb-6">
-      <p className="text-xs font-inter font-bold text-gray-800 pb-2">
+      <p className="pb-2 text-xs font-bold text-gray-800 font-inter">
         Connected Account
       </p>
-      <p className="font-inter text-gray-800 text-sm">{account}</p>
+      <p className="text-sm text-gray-800 break-all font-inter">{account}</p>
     </div>
   );
 };
