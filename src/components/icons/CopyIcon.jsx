@@ -1,22 +1,11 @@
 import * as React from "react";
 
-const CopyIcon = (props) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-    {...props}
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M8 16H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2m-6 12h8a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-8a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2z"
-    />
-  </svg>
-);
+const CopyIcon = (props) => {
+  return (
+    <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path d="M10.6666 0.666992H2.66659C1.93325 0.666992 1.33325 1.26699 1.33325 2.00033V11.3337H2.66659V2.00033H10.6666V0.666992ZM12.6666 3.33366H5.33325C4.59992 3.33366 3.99992 3.93366 3.99992 4.66699V14.0003C3.99992 14.7337 4.59992 15.3337 5.33325 15.3337H12.6666C13.3999 15.3337 13.9999 14.7337 13.9999 14.0003V4.66699C13.9999 3.93366 13.3999 3.33366 12.6666 3.33366ZM12.6666 14.0003H5.33325V4.66699H12.6666V14.0003Z" />
+    </svg>
+  );
+};
 
 export default CopyIcon;
