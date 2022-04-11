@@ -19,7 +19,6 @@ export default function Home() {
       <Head>
         <title>Neptune Mutual Testnet Faucet</title>
         <meta name="description" content="Testnet Faucet" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className="flex flex-col items-center justify-center w-screen h-screen bg-36309D">
