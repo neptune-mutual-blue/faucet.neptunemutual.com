@@ -15,12 +15,24 @@ const fetchBalance = async (tokenAddress, library, account, networkId) => {
   return res;
 };
 
-const requestToken = async (tokenAddress, library, account, networkId) => {
-  const res = await requestFakeToken(tokenAddress, library, account, networkId);
+const requestToken = async (
+  tokenAddress,
+  decimals,
+  library,
+  account,
+  networkId
+) => {
+  const res = await requestFakeToken(
+    tokenAddress,
+    decimals,
+    library,
+    account,
+    networkId
+  );
   return res;
 };
 
-export const useMintableToken = (address) => {
+export const useMintableToken = (address, decimals) => {
   const { chainId, account, library } = useWeb3React();
 
   const [balance, setBalance] = useState();
@@ -54,7 +66,7 @@ export const useMintableToken = (address) => {
   const request = () => {
     if (!chainId || !account) return;
 
-    requestToken(address, library, account, chainId)
+    requestToken(address, decimals, library, account, chainId)
       .then(() => {
         fetchBalance(address, library, account, chainId)
           .then((bal) => setBalance(bal))

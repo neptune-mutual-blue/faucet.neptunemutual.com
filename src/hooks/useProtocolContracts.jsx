@@ -95,18 +95,6 @@ export const useProtocolContracts = () => {
       }));
     });
 
-    registry.ProvisionContract.getAddress(chain, signerOrProvider).then(
-      (addr) => {
-        setData((prev) => ({
-          ...prev,
-          [chain]: {
-            ...prev[chain],
-            ProvisionContract: addr,
-          },
-        }));
-      }
-    );
-
     registry.Staking.getAddress(chain, signerOrProvider).then((addr) => {
       setData((prev) => ({
         ...prev,

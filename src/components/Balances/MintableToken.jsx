@@ -5,9 +5,11 @@ import { useMintableToken } from "@/src/hooks/useMintableToken";
 import CopyIcon from "@/components/icons/CopyIcon";
 import { useState, useEffect } from "react";
 
-export const MintableToken = ({ address, symbol }) => {
-  const { loading, balance, request, explorerUrl, register } =
-    useMintableToken(address);
+export const MintableToken = ({ address, symbol, decimals = 18 }) => {
+  const { loading, balance, request, explorerUrl, register } = useMintableToken(
+    address,
+    decimals
+  );
 
   const [message, setMessage] = useState("");
 
@@ -41,7 +43,7 @@ export const MintableToken = ({ address, symbol }) => {
     <>
       <tr className="flex items-center">
         <td>
-          <div className="font-inter text-gray-800 text-sm">
+          <div className="text-sm text-gray-800 font-inter">
             {hasValue(balance)
               ? convertFromUnits(balance).decimalPlaces(2).toString()
               : "0"}{" "}
@@ -50,14 +52,14 @@ export const MintableToken = ({ address, symbol }) => {
         </td>
         <td className="p-1 ml-auto">
           <button
-            className="text-36309D hover:text-red-600 text-sm"
+            className="text-sm text-36309D hover:text-red-600"
             onClick={request}
           >
             Request
           </button>
         </td>
         <td className="p-1 ml-1">
-          <button className="flex relative" onClick={handleCopy}>
+          <button className="relative flex" onClick={handleCopy}>
             <span className="sr-only">Copy token address</span>
             <CopyIcon fill="#9B9B9B" width={18} height={18} />
             {message && (
