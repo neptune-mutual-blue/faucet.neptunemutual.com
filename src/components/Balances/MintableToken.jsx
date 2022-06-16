@@ -45,7 +45,7 @@ export const MintableToken = ({ address, symbol, decimals = 18 }) => {
         <td>
           <div className="text-sm text-gray-800 font-inter">
             {hasValue(balance)
-              ? convertFromUnits(balance).decimalPlaces(2).toString()
+              ? convertFromUnits(balance, decimals).decimalPlaces(2).toString()
               : "0"}{" "}
             {symbol}
           </div>

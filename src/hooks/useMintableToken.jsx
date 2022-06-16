@@ -82,7 +82,7 @@ export const useMintableToken = (address, decimals) => {
       ? `https://api.neptunemutual.com/images/tokens/${symbol.toLowerCase()}.svg`
       : undefined;
 
-    registerToken(address, symbol, 18, image)
+    registerToken(address, symbol, decimals, image)
       .then(console.log)
       .catch(console.error);
   };
