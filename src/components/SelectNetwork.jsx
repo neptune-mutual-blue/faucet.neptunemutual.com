@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNetwork } from "../context/network";
 
-const Network_IDs = ["3", "42", "80001"];
+const Network_IDs = ["3", "42", "80001", "43113"];
 export const SelectNetwork = () => {
   const { network, setNetwork } = useNetwork();
 
@@ -31,7 +31,7 @@ export const SelectNetwork = () => {
           Select a Network
         </h3>
         <div className="flex items-center justify-between sm:justify-start sm:space-x-5">
-          <div className="flex items-center justify-center">
+          {/* <div className="flex items-center justify-center">
             <input
               type="radio"
               className="w-4 h-4 accent-36309D"
@@ -65,7 +65,7 @@ export const SelectNetwork = () => {
             >
               Kovan
             </label>
-          </div>
+          </div> */}
 
           {/* <div className="flex items-center justify-center">
             <input
@@ -100,6 +100,23 @@ export const SelectNetwork = () => {
               className="ml-1 text-sm text-gray-800 font-inter"
             >
               Mumbai
+            </label>
+          </div>
+          <div className="flex items-center justify-center">
+            <input
+              type="radio"
+              className="w-4 h-4 accent-36309D"
+              id="networkChoice2"
+              name="network"
+              value="43113"
+              onChange={handleChange}
+              checked={"43113" === network}
+            />
+            <label
+              htmlFor="networkChoice2"
+              className="ml-1 text-sm text-gray-800 font-inter"
+            >
+              Fuji
             </label>
           </div>
         </div>

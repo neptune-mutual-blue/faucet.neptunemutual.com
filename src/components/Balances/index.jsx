@@ -1,8 +1,8 @@
 import { MintableToken } from "@/components/Balances/MintableToken";
 import { useNetwork } from "@/src/context/network";
 import { useWeb3React } from "@web3-react/core";
-import { config } from "@neptunemutual/sdk";
-import { Contract, Provider } from "ethers-multicall";
+import { config, multicall } from "@neptunemutual/sdk";
+const { Contract, Provider } = multicall;
 import { chunk } from "@/src/utils/arrays";
 import { useEffect, useState } from "react";
 import { getProviderOrSigner } from "@/lib/connect-wallet/utils/web3";
