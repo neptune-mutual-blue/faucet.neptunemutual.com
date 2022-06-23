@@ -1,9 +1,11 @@
 import { Contract } from "@ethersproject/contracts";
 import { getProviderOrSigner } from "@/lib/connect-wallet/utils/web3";
+import { convertToUnits } from "@/src/utils/bn";
 import FakeTokenABI from "./abis/FakeTokenABI.json";
 
 export const requestFakeToken = async (
   tokenAddress,
+  decimals,
   library,
   account,
   networkId
@@ -20,7 +22,7 @@ export const requestFakeToken = async (
     console.log("No instance found");
   }
 
-  const tx = await instance.mint("2000000000000000000000");
+  const tx = await instance.mint(convertToUnits("2000", decimals).toString());
   await tx.wait();
   return tx;
 };

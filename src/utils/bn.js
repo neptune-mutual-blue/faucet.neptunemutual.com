@@ -10,5 +10,11 @@ export const hasValue = (x) => {
 };
 
 export const convertFromUnits = (value, decimals = 18) => {
-  return BigNumber(value.toString()).dividedBy(Math.pow(10, decimals));
+  return new BigNumber(value.toString()).dividedBy(Math.pow(10, decimals));
+};
+
+export const convertToUnits = (value, decimals = 18) => {
+  return new BigNumber(value.toString())
+    .multipliedBy(Math.pow(10, decimals))
+    .decimalPlaces(0);
 };
